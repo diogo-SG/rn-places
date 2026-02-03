@@ -1,9 +1,8 @@
-import { View } from "react-native";
+import PlacesList from "@/components/places/PlacesList";
+import { StyleSheet } from "react-native";
 
 function AllPlaces() {
-    return <View>
-        <Text>All Places</Text>
-    </View>
+    return <PlacesList places={[]} />
 }
 
 export default AllPlaces;
@@ -13,4 +12,4 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-    }
+    }});

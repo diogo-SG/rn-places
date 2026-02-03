@@ -1,9 +1,14 @@
 import Place from "@/models/Place";
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 
-export default function PlaceItem({place}: {place: Place}) {
+interface PlaceItemProps {
+    place: Place;
+    onSelect: () => void;
+}
+
+export default function PlaceItem({place, onSelect}: PlaceItemProps) {
     return (
-        <Pressable onPress={() => {}} style={styles.placeItem}>
+        <Pressable onPress={onSelect} style={styles.placeItem}>
             <Image source={{uri: place.imageUri}} style={styles.image} />
             <View style={styles.info}>
                 <Text style={styles.title}>{place.title}</Text>
