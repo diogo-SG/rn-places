@@ -1,4 +1,5 @@
 import IconButton from "@/components/UI/IconButton";
+import { Colors } from "@/constants/colors";
 import AddPlace from "@/screens/AddPlace";
 import AllPlaces from "@/screens/AllPlaces";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -10,8 +11,15 @@ export default function Index() {
   return (
     <>
     <StatusBar barStyle="dark-content" />
-
-      <Stack.Navigator>
+      <Stack.Navigator screenOptions={{
+        headerStyle: {
+          backgroundColor: Colors.primary500,
+        },
+        headerTintColor: Colors.gray700,
+        contentStyle: {
+          backgroundColor: Colors.gray700,
+        },
+      }}>
         <Stack.Screen name="index" component={AllPlaces} 
         options={({navigation}) => ({ 
         title: 'All Places', 
